@@ -4,6 +4,15 @@ __pycache__/
 *$py.class
 test/
 train/
+# Models
+*.keras
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+/models/
+
 # C extensions
 *.so
 *.jpeg
