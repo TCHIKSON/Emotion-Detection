@@ -69,3 +69,58 @@ Nous avons retenu **ResNet50 + Transfer Learning** pour le modèle de production
 3. Des **performances globales** nettement supérieures à la baseline.
 
 Le CNN *from scratch* est conservé dans le dépôt à titre de référence pédagogique.
+
+
+## ⚙️ Installation officielle
+
+### 📦 1) Cloner le dépôt
+```bash
+git clone https://github.com/TCHIKSON/Emotion-Detection.git
+cd Emotion-Detection/font/api
+```
+
+### 🐍 2) Prérequis Python
+Le projet est compatible avec **Python 3.10 → 3.12**.  
+*(Évitez Python 3.13 car TensorFlow n'est pas encore totalement stable dessus).*
+
+Vérifiez votre version :
+
+```bash
+python --version
+```
+
+### 🛠️ 3) Installer les dépendances
+```bash
+pip install tensorflow fastapi uvicorn gradio pillow numpy opencv-python requests
+```
+
+### 📁 4) Structure des fichiers
+Pour que le script se lance correctement, vérifiez que le modèle est bien placé à la racine du repo :
+
+```text
+Emotion-Detection/
+├── best_resnet50_fer_finetuned.keras   # Modèle final
+├── class_names.json                    # Noms des émotions
+└── font/api/
+    ├── main.py                         # Point d'entrée unique
+    ├── app.py                          # Serveur API
+    └── frontend.py                     # Interface Gradio
+```
+
+### ▶️ 5) Lancer le projet
+Exécutez la commande suivante depuis le dossier `font/api/` :
+
+```bash
+python main.py
+```
+
+* **API (Backend) :** http://127.0.0.1:8000/docs  
+* **Gradio (Frontend) :** http://127.0.0.1:7860
+
+---
+
+## 🧠 Résumé Rapide
+
+1. **Clone :** `git clone ...`
+2. **Install :** `pip install tensorflow fastapi uvicorn gradio pillow numpy opencv-python requests`
+3. **Run :** `python main.py`
